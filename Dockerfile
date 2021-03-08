@@ -11,27 +11,15 @@ RUN apt-get update \
             && apt-get install -y \
                 pandoc \
                 python3.8 \
+                python3.8-dev \
                 python3-pip \
                 texlive-xetex \
         && rm -rf /var/lib/apt/lists/* \
     ;
 
-RUN python3.8 -m pip install --no-cache-dir \
-    beautifulsoup4 \
-    deepdiff \
-    jupyterlab \
-    langdetect \
-    matplotlib \
-    numpy \
-    pandas \
-    protorpc \
-    requests \
-    scikit-learn \
-    scipy \
-    spacy \
-    sqlalchemy \
-    ;
+COPY requirements.txt .
+RUN python3.8 -m pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 8888
 ENTRYPOINT ["jupyter"]
-CMD ["lab", "--notebook-dir=/usr/src/app", "--ip=0.0.0.0", "--NotebookApp.token=''", "--no-browser", "--allow-root", "--port=8888"]
+CMD ["lab", "--notebook-dir=/usr/src/app", "--ip=0.0.0.0", "--ServerApp.token=''", "--no-browser", "--allow-root", "--port=8888"]
