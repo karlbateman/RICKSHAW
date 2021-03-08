@@ -17,16 +17,7 @@ installed on your system.
 
 ### Usage
 
-Clone this repo onto your system and build a local docker image.
-
-```bash
-git clone https://github.com/karlbateman/rickshaw ~/rickshaw \
-  && cd ~/rickshaw \
-  && docker build . --tag=karlbateman/rickshaw \
-  ;
-```
-
-Then run either of the following commands to launch a local instance.
+Run either of the following commands to launch a local instance, depending on your needs.
 
 ```bash
 docker run --rm --tty --interactive \
@@ -47,8 +38,7 @@ docker run --rm --tty --interactive \
   ;
 ```
 
-Once the Rickshaw image has been built and the container launched you should be
-able to visit <http://localhost:8888> in your web browser.
+Visit <http://localhost:8888> in your web browser.
 
 ## Packages
 
