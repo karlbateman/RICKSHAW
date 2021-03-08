@@ -33,7 +33,7 @@ For mounting a persisted volume, please use the following command.
 docker run --rm --tty --interactive \
   --publish=127.0.0.1:8888:8888 \
   --name=rickshaw \
-  --volume=~/.data/notebooks:/usr/src/app \
+  --volume=$HOME/.data/notebooks:/usr/src/app \
   karlbateman/rickshaw \
   ;
 ```
