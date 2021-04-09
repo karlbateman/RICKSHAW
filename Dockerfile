@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV PYTHONUNBUFFERED 1
 
 RUN apt-get update \
-    && apt-get install -y software-properties-common -y \
+    && apt-get install -y software-properties-common \
         && add-apt-repository ppa:deadsnakes/ppa \
             && apt-get install -y \
                 pandoc \
